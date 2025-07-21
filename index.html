@@ -61,18 +61,18 @@
     .image-box { position: relative; overflow: hidden; padding-top: 75%; }
     .image-box img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
 
-    /* CORRECTED STYLES FOR FLOATING HEARTS (now in Hero section) */
+    /* Floating Hearts (Confined to Hero Section for stability) */
     .floating-hearts-container {
-      position: absolute; /* Changed back to absolute to stay within the hero section */
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      z-index: 2;      /* Places it between the background image and the text */
+      z-index: 2;
     }
     .heart {
-      color: rgba(255, 218, 185, 0.5); /* Peach color with 50% opacity */
+      color: rgba(255, 218, 185, 0.5);
       position: absolute;
       bottom: -10vh;
       animation: floating 15s linear infinite;
@@ -88,6 +88,27 @@
     .heart:nth-child(5) { left: 65%; font-size: 18px; animation-duration: 16s; animation-delay: 1s; }
     .heart:nth-child(6) { left: 80%; font-size: 35px; animation-duration: 11s; animation-delay: 2s; }
     .heart:nth-child(7) { left: 90%; font-size: 22px; animation-duration: 20s; animation-delay: 4s; }
+
+    /*
+      THIS IS THE CORRECTED CSS FOR THE HERO IMAGE
+      It now includes all the necessary styles to display correctly,
+      plus the object-position property for you to adjust.
+    */
+    .hero img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      
+      /* --- EXPERIMENT WITH THESE VALUES --- */
+      /* object-position: center top;    (Focuses on the top edge of the photo) */
+      object-position: 0% center;  (Focuses on a point 0% from the left edge)
+      /* object-position: center center; This is the default, focuses on the absolute middle */
+    }
+
   </style>
 
 </head>
@@ -323,7 +344,7 @@
       confetti({ particleCount: 100, angle: 120, spread: 55, origin: { x: 1 }, colors: myColours });
     });
   </script>
-
+  
 </body>
 
 </html>
