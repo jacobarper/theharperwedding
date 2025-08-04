@@ -1,56 +1,351 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Jacob & Karley's Wedding</title>
+
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .rsvp-section-highlight {
+      background-color: #FFDAB9; /* This is a Peach color */
+    }
+
+    /* Font styling */
+    .hero h2.script-font,
+    .header .logo .sitename,
+    .section-title h2 {
+      font-family: 'Great Vibes', cursive;
+      font-weight: normal;
+    }
+    .hero p.script-font {
+        font-family: 'Great Vibes', cursive;
+        font-size: 2.5em;
+        line-height: 1.4;
+        font-weight: normal;
+        margin-top: 300px;
+        color: #fff;
+    }
+    .header .logo .sitename { font-size: 2.5em; }
+    .section-title h2 { font-size: 4em; padding-bottom: 20px; }
+    
+    /* Order of the Day styling */
+    .schedule-item-new { display: flex; align-items: baseline; justify-content: center; padding: 10px 0; width: 100%;}
+    .schedule-item-new time { font-weight: bold; padding-right: 20px; flex-basis: 120px; text-align: right; }
+    .schedule-item-new .details { padding-left: 20px; border-left: 1px solid rgba(85, 107, 47, 0.3); flex-basis: 250px; text-align: left; }
+    .schedule-item-new .details h4 { margin: 0; font-size: 1.1em; }
+    
+    /* CSS for Hotel images */
+    .hotels .card .card-img { height: 250px; overflow: hidden; }
+    .hotels .card .card-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* CSS for Area Info images */
+    .image-box { position: relative; overflow: hidden; padding-top: 75%; }
+    .image-box img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+
+    /* Floating Hearts (Confined to Hero Section for stability) */
+    .floating-hearts-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 2;
+    }
+    .heart {
+      color: rgba(255, 218, 185, 0.5);
+      position: absolute;
+      bottom: -10vh;
+      animation: floating 15s linear infinite;
+    }
+    @keyframes floating {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+    .heart:nth-child(1) { left: 10%; font-size: 20px; animation-duration: 13s; animation-delay: 0s; }
+    .heart:nth-child(2) { left: 20%; font-size: 30px; animation-duration: 15s; animation-delay: 1.5s; }
+    .heart:nth-child(3) { left: 35%; font-size: 16px; animation-duration: 18s; animation-delay: 0.5s; }
+    .heart:nth-child(4) { left: 50%; font-size: 25px; animation-duration: 12s; animation-delay: 3s; }
+    .heart:nth-child(5) { left: 65%; font-size: 18px; animation-duration: 16s; animation-delay: 1s; }
+    .heart:nth-child(6) { left: 80%; font-size: 35px; animation-duration: 11s; animation-delay: 2s; }
+    .heart:nth-child(7) { left: 90%; font-size: 22px; animation-duration: 20s; animation-delay: 4s; }
+
+    /*
+      THIS IS THE CORRECTED CSS FOR THE HERO IMAGE
+      It now includes all the necessary styles to display correctly,
+      plus the object-position property for you to adjust.
+    */
+    .hero img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      
+      /* --- EXPERIMENT WITH THESE VALUES --- */
+      /* object-position: center top;    (Focuses on the top edge of the photo) */
+      object-position: 0% center;  (Focuses on a point 0% from the left edge)
+      /* object-position: center center; This is the default, focuses on the absolute middle */
+    }
+
   </style>
+
 </head>
-<body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Our Wedding&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f4f4f4;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.landing {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3em;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2em;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #555;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="landing"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Jacob &amp; Karley&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;ARE GETTING MARRIED&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;April 3rd, 2026&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename">J & K</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#schedule">Order of the Day</a></li>
+          <li><a href="#hotels">Accommodation</a></li>
+          <li><a href="#venue">Rushpool Hall</a></li>
+          <li><a href="#area-info">Saltburn-by-the-Sea</a></li>
+          <li><a href="#playlist">Playlist</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">RSVP</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section id="hero" class="hero section dark-background">
+      
+      <div class="floating-hearts-container">
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+        <div class="heart">♥</div>
+      </div>
+
+      <img src="assets/img/karleyme4.jpeg" alt="Jacob and Karley" data-aos="fade-in">
+
+      <div class="container">
+        <div class="row justify-content-end">
+          <div class="col-lg-6 text-center text-lg-end"> 
+            <div data-aos="fade-up" data-aos-delay="100">
+              <h2 class="script-font" style="font-size: 6em; line-height: 1;">Jacob & Karley</h2>
+              <p class="script-font">
+                3rd April 2026<br>
+                Rushpool Hall<br>
+                Saltburn-by-the-Sea
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="schedule section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Order of the Day</h2>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="d-flex flex-column align-items-center">
+
+            <div class="schedule-item-new"><time>1:00PM</time><div class="details"><h4>Ceremony</h4></div></div>
+            <div class="schedule-item-new"><time>1:30PM</time><div class="details"><h4>Drinks Reception</h4></div></div>
+            <div class="schedule-item-new"><time>3:30PM</time><div class="details"><h4>Wedding Breakfast</h4></div></div>
+            <div class="schedule-item-new"><time>5:30PM</time><div class="details"><h4>Speeches & Toast</h4></div></div>
+            <div class="schedule-item-new"><time>6:30PM</time><div class="details"><h4>Evening Reception</h4></div></div>
+            <div class="schedule-item-new"><time>7:00PM</time><div class="details"><h4>First Dance</h4></div></div>
+            <div class="schedule-item-new"><time>7:30PM</time><div class="details"><h4>Party !</h4></div></div>
+            <div class="schedule-item-new"><time>12:30AM</time><div class="details"><h4>Carriages</h4></div></div>
+
+        </div>
+      </div>
+    </section>
+    
+    <section id="hotels" class="hotels section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Accommodation</h2>
+        <p>If you are not staying at Rushpool Hall, here are recommended alternatives</p>
+      </div>
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="card h-100"><a href="https://brockleyhallhotel.com/" target="_blank" class="stretched-link"><div class="card-img"><img src="assets/img/hotels-1.jpg" alt="Photo of Brockley Hall" class="img-fluid"></div><h3>Brockley Hall</h3><p>0.4 Miles from the Venue</p></a></div></div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="card h-100"><a href="https://thespahotelsaltburn.co.uk/" target="_blank" class="stretched-link"><div class="card-img"><img src="assets/img/hotels-2.jpg" alt="Photo of The Spa Hotel" class="img-fluid"></div><h3>The Spa Hotel</h3><p>0.5 Miles from the Venue</p></a></div></div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300"><div class="card h-100"><a href="https://www.saltburnhouse.co.uk/" target="_blank" class="stretched-link"><div class="card-img"><img src="assets/img/hotels-3.jpg" alt="Photo of Saltburn House" class="img-fluid"></div><h3>Saltburn House</h3><p>0.6 Miles from the Venue</p></a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="venue" class="venue section">
+      <div class="container section-title" data-aos="fade-up"><h2>Rushpool Hall</h2></div>
+      <div class="container-fluid" data-aos="fade-up">
+        <div class="row g-0">
+          <div class="col-lg-6 venue-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19798.292239216586!2d-0.9823310421781365!3d54.57997266928484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487ee4917248e683%3A0x658df0f16c63e73d!2sRushpool%20Hall%20Wedding%20Venue!5e1!3m2!1sen!2suk!4v1752419841034!5m2!1sen!2suk" style="border:0; width: 100%; height: 100%; min-height: 500px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+          <div class="col-lg-6 venue-info"><div class="row justify-content-center"><div class="col-11 col-lg-8 position-relative"><h3>Our Venue</h3><p>Nestled in the beautiful countryside, Rushpool Hall offers stunning views and a historic setting for our celebration. There is plenty of on-site parking available for guests.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="area-info" class="sponsors section">
+      <div class="container" data-aos="fade-up">
+        <div class="container section-title">
+            <h2>Saltburn-by-the-Sea</h2>
+            <p>Recommendations of what to do to make the most out of the weekend</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="mb-4"><h4>Saltburn Cliff Tramway</h4><p>Experience the UK’s oldest operating water-balanced cliff lift. It offers a nostalgic journey between the town and the beach, with panoramic views of the coastline.</p></div>
+                <div class="mb-4"><h4>Saltburn Pier</h4><p>Stroll down the beautifully restored Victorian pier, the last remaining pleasure pier on the Northeast coast. It’s especially enchanting during sunset.</p></div>
+                <div class="mb-4"><h4>Saltburn Valley Gardens</h4><p>Wander through the woodland trails of these carefully preserved gardens, home to a variety of flora, fauna, and the babbling Skelton Beck.</p></div>
+                <div class="mb-4"><h4>Surfing</h4><p>With consistent waves, Saltburn has become a hub for surfers. Whether you’re a pro or a beginner, the town offers surf schools and rental facilities.</p></div>
+                <div class="mb-4"><h4>The Saltburn Miniature Railway</h4><p>Enjoy a charming ride on this miniature steam train that takes you from Cat Nab station to Forest Halt, passing through the beautiful woodland of the Valley Gardens.</p></div>
+                <div class="mb-4"><h4>The Smugglers Heritage Centre</h4><p>Discover Saltburn’s intriguing smuggling past. This museum, located in Old Saltburn, recounts tales of smugglers, ships, and contraband.</p></div>
+                <div class="mb-4"><h4>Hunt for the Saltburn Yarnbombers</h4><p>This anonymous group decorates the pier and other parts of the town with thematic knitted creations. Each year there’s a new theme, turning parts of the town into a delightful treasure hunt.</p></div>
+                <div class="mb-4"><h4>ArtsBank</h4><p>A five-story arts venue on the seafront, ArtsBank houses the works of over 100 local artists, ranging from paintings and sculptures to ceramics and textiles.</p></div>
+                <div class="mb-4"><h4>Walk the Cleveland Way</h4><p>Starting (or ending) in Saltburn-by-the-Sea, this national trail offers stunning cliff-top views and stretches across the North York Moors National Park.</p></div>
+                <div class="mb-4"><h4>Enjoy Local Cuisine</h4><p>Being a coastal town, Saltburn offers fresh seafood. There are numerous cafes, restaurants, and traditional fish & chip shops. Don’t forget to try the local delicacy, lemon tops – a unique ice cream treat!</p></div>
+                <div class="faq-item"><h3><span class="num">8.</span> A note on gifts</h3><div class="faq-content"><p>Having you celebrate our big day with us is the most important thing for us. If, however you would like to honour us with a gift, a contribution towards our honeymoon would be very much appreciated !</p></div><i class="faq-toggle bi bi-chevron-right"></i></div>                 
+            </div>
+            <div class="col-lg-5">
+                <div class="image-box rounded mb-4"><img src="assets/img/saltburn1.jpg" alt="A scenic view of Saltburn"></div>
+                <div class="image-box rounded mb-4"><img src="assets/img/saltburn2.jpg" alt="A scenic view of Saltburn"></div>
+                <div class="image-box rounded mb-4"><img src="assets/img/saltburn3.jpg" alt="A scenic view of Saltburn"></div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="playlist" class="playlist section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Our Wedding Playlist</h2>
+        <p>Help us build the perfect soundtrack for our day! Add your favourite dance floor fillers to our collaborative playlist on Spotify.</p>
+      </div>
+      <div class="container d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2Wi7B3hertbZQVZacHUuU0?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </section>
+    
+    <section id="faq" class="faq section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-container">
+              <div class="faq-item"><h3><span class="num">1.</span> What time should guests arrive?</h3><div class="faq-content"><p>The bar will open at noon, with Jacob and his groomsmen welcoming you all in. Please can we ask that guests arrive no later than 12.30pm for the ceremony to begin at 1pm. If you are joining us for our evening celebrations, we hope to see you from 6pm onwards!</p></div><i class="faq-toggle bi bi-chevron-right"></i></div>
+              <div class="faq-item"><h3><span class="num">2.</span> Is there parking at the wedding venue?</h3><div class="faq-content"><p>Yes, free parking is available.</p></div><i class="faq-toggle bi bi-chevron-right"></i></div>
+              <div class="faq-item"><h3><span class="num">3.</span> Will the wedding be indoors or outdoors?</h3><div class="faq-content"><p>Weather permitting, the ceremony will take place outdoors. Rushpool Hall has quite extensive grounds, so you may want to go for a walk - bring a jacket!</p></div><i class="faq-toggle bi bi-chevron-right"></i></div>
+              <div class="faq-item"><h3><span class="num">4.</span> Is there a dress code?</h3><div class="faq-content"><p>Formal attire please, the more colourful the better! You will be able to spot our wedding party in their lovely green outfits; if possible, please can you refrain from wearing similar colours to them.</p></div><i class="faq-toggle bi bi-chevron-right"></i></div>
+              <div class="faq-item"><h3><span class="num">5.</span> Can I bring a plus one?</h3><div class="faq-content"><p>Unfortunately, due to budget and space limitations, we simply can’t afford for all of our lovely guests to bring a guest of their own. Therefore, we regretfully ask our guests to please not bring a plus one, unless they are specifically named on the invitation. Thank you so much for understanding!</p></div><i class="faq-toggle bi bi-chevron-right"></i></div>
+              <div class="faq-item"><h3><span class="num">6.</span> Can I bring children?</h3><div class="faq-content"><p>With the exception of close family members' children, who are named on their invitations, we are hosting an adult-only wedding. Thank you for your understanding!</p></div><i class="faq-toggle bi bi-chevron-right"></i></div>
+              <div class="faq-item"><h3><span class="num">7.</span> Can we take pictures during the ceremony?</h3><div class="faq-content"><p>Our lovely photographer Angela and videographer Gav will be around throughout the day capturing the magic, please can you refrain from taking your own photos during the ceremony (you’re more than welcome to take your own photos/videos afterwards!)</p></div><i class="faq-toggle bi bi-chevron-right"></i></div>
+              <div class="faq-item"><h3><span class="num">8.</span> Can we post pictures on social media?</h3><div class="faq-content"><p>Please can we ask that no photos of the day be shared on social media until we ourselves are ready to post anything.</p></div><i class="faq-toggle bi bi-chevron-right"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section rsvp-section-highlight">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>RSVP</h2>
+        <p>Please let us know if you can make it by 1st January 2026</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <form action="https://formspree.io/f/xeozjgka" method="post" data-aos="fade-up" data-aos-delay="400">
+              <div class="row gy-4">
+                <div class="col-md-12"><input type="text" name="name" class="form-control" placeholder="Your Full Name(s)" required></div>
+                <div class="col-md-12"><select name="attending" class="form-control" required><option value="" disabled selected>Will you be attending?</option><option value="Joyfully Accepts">Joyfully Accepts</option><option value="Regretfully Declines">Regretfully Declines</option></select></div>
+                <div class="col-md-12"><input type="text" class="form-control" name="song-request" placeholder="Any song requests for the dance floor?"></div>
+                <div class="col-md-12"><textarea class="form-control" name="dietary-requirements" rows="4" placeholder="Please list any dietary requirements"></textarea></div>
+                <div class="col-md-12 text-center"><button type="submit">Send RSVP</button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 footer-about text-center">
+            <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+              <span class="sitename">Jacob & Karley</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>April 3rd, 2026</p>
+              <p>Rushpool Hall, Saltburn-by-the-Sea</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright text-center">
+      <div class="container">
+        <div class="d-flex flex-column align-items-center">
+          <div>© Copyright <strong><span>Jacob & Karley</span></strong>. All Rights Reserved</div>
+<!--           <div class="credits">Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a></div> -->
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      const myColours = ['#556B2F', '#FFDAB9', '#FFA500', '#ADD8E6'];
+      confetti({ particleCount: 100, angle: 60, spread: 55, origin: { x: 0 }, colors: myColours });
+      confetti({ particleCount: 100, angle: 120, spread: 55, origin: { x: 1 }, colors: myColours });
+    });
+  </script>
+  
 </body>
+
 </html>
